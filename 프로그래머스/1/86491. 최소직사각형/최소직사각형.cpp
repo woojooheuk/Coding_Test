@@ -9,8 +9,7 @@ int solution(vector<vector<int>> sizes) {
     int answer = 0;
     
     int Size1 = sizes.size();
-    int Size2 = 2;
-    
+
     int Long = 0;
     int Short = 0;
 
