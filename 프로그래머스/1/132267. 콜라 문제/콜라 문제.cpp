@@ -4,17 +4,17 @@
 
 using namespace std;
 
-int Exchange(int Divide, int NewBottle, int Bottle, int WholeBottle)
+int Exchange(int Divide, int NewBottle, int Bottle, int* WholeBottle)
 {
-    WholeBottle += (Bottle / Divide) * NewBottle;
+    *WholeBottle += (Bottle / Divide) * NewBottle;
     if(Bottle < Divide)
     {
-        return WholeBottle;
+        return *WholeBottle;
     }   
     
     
     cout << "A : " << Divide << " B : " << NewBottle <<
-        " C : " << Bottle<< " D: "<< WholeBottle << endl;
+        " C : " << Bottle<< " D: "<< *WholeBottle << endl;
     
     return Exchange(Divide, NewBottle, 
                     (Bottle / Divide) * NewBottle + (Bottle % Divide),WholeBottle);
@@ -23,7 +23,7 @@ int Exchange(int Divide, int NewBottle, int Bottle, int WholeBottle)
 int solution(int a, int b, int n) {
     int answer = 0;
 
-    answer = Exchange(a,b,n,0);
+    Exchange(a,b,n,&answer);
     
     cout<<answer<<endl;
     return answer;
