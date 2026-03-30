@@ -26,15 +26,12 @@ int solution(vector<int> priorities, int location) {
         if(priorities[answer] == T.second)
         {
             answer++;
-            cout <<T.first<<endl;
-            
             if(location == T.first)
                 break;
         }
+        else
         Temp.push(T);
     }
-    
-    
     
     return answer;
 }
